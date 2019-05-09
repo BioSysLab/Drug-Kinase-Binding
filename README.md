@@ -24,5 +24,7 @@ We also used this model to participate in [IDG-Dream Challenge for Kinase bindin
 
 ## References
 [1] Elif Ozkirimli Hakime Ozturk and Arzucan Ozgur. Deepdta: Deep drug-target binding affinity prediction.arXiv:1801.10193, 2018.
+
 [2] Jorge Aguilera-Iparraguirre Rafael Gomez-Bombarelli Timothy Hirzel AlanAspuru-Guzik David Duvenaudy, Dougal Maclauriny and Ryan P. Adams.Convolutional networks on graphs for learning molecular fingerprints.NeuralInformation Processing Systems (NIPS), 2015.
+
 [3] Izhar Wallach and Abraham Heifets. Most ligand-based classification bench-marks reward memorization rather than generalization.J. Chem. Inf.Model., 58:916–932, 2018.
