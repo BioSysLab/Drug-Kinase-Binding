@@ -1,4 +1,4 @@
-# Deep learning for Receptor/ligand binding affinity prediction epxressed with Kd
+# Deep learning for Receptor / ligand binding affinity prediction
 ### Christos Fotis<sup>1</sup>, Panagiotis Terzopoulos<sup>1</sup>, Konstantinos Ntagiantas<sup>1</sup> and Leonidas G.Alexopoulos<sup>1,2</sup>
  #### 1. BioSys Lab, National Technical University of Athens, Athens, Greece.
 #### 2. ProtATonce Ltd, Athens, Greece.
