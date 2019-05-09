@@ -20,5 +20,5 @@ The data augmentation pipeline was implemented using R while the models were bui
 ## Results and discussion
 The best predictions for the test set came out of the second architecture we implemented which included the encoder. Having in mind how difficult it is to really generalize to new compound scaffolds never previously seen during training [3], an encoder that has been trained to represent the combined train and test-set distribution is expected to boost performance when its encoded feature vector is fed for further training.     
 
-We also used this model to participate in [IDG-Dream Challenge for Kinase binding](https://www.synapse.org/#!Synapse:syn15667962/wiki/583305)
+We also used this model to participate in [IDG-Dream Challenge for Kinase binding](https://www.synapse.org/#!Synapse:syn15667962/wiki/583305).
 
