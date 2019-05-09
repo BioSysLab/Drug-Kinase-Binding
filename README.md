@@ -1,5 +1,5 @@
 # DreamChallenge Report - DruginaseLearning Team
-### Christos Fotis^1^, Panagiotis Terzopoulos^1^, Konstantinos Ntagiantas^1^ and Leonidas G.Alexopoulos^1,2^
+### Christos Fotis<sup>1</sup>, Panagiotis Terzopoulos^1^, Konstantinos Ntagiantas^1^ and Leonidas G.Alexopoulos^1,2^
  #### 1. BioSys Lab, National Technical University of Athens, Athens, Greece.
 #### 2. ProtATonce Ltd, Athens, Greece.
 
