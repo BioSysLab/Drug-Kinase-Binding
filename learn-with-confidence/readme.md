@@ -1,4 +1,4 @@
-#Learn with confidence
+# Learn with confidence
 Predicting an uncertainty estimation alongside with the point prediction in deep learning.
 
 ## Introduction
