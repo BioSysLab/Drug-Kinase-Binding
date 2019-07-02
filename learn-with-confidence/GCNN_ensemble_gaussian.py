@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
-
-
 from __future__ import division, print_function
 from comet_ml import Experiment
 import numpy as np
@@ -50,8 +47,6 @@ from ..main.NGF_layers.graph_layers import temporal_padding, neighbour_lookup, N
 
 # # Load Data
 
-# In[3]:
-
 
 df = pd.read_csv('./../main/data/clean/train_clean.csv',index_col=0)
 df = df.sample(frac=1).reset_index(drop=True)
@@ -61,8 +56,6 @@ df_cold = pd.read_csv('./../main/data/clean/cold_clean.csv',index_col=0)
 
 
 # # Protein Encoding
-
-# In[3]:
 
 
 dict_prot = { "A": 1, "C": 2, "E": 3, "D": 4, "G": 5,
@@ -100,8 +93,6 @@ def make_datasets(dataframe):
     return(XT, Y, Y_digital)
 
 
-# In[4]:
-
 
 seqs_train, Y_train, Y_digital_train  = make_datasets(df)
 seqs_random, Y_random, Y_digital_random  = make_datasets(df_random)
@@ -109,8 +100,6 @@ seqs_cold, Y_cold, Y_digital_cold  = make_datasets(df_cold)
 
 
 # # Drug Encoding
-
-# In[5]:
 
 
 smiles_train = df['canonical_smiles']
@@ -129,8 +118,6 @@ num_bond_features = X_bonds_train.shape[-1]
 
 
 # # Dictionary and metrics
-
-# In[6]:
 
 
 def r_square(y_true, y_pred):
@@ -154,8 +141,6 @@ def get_cindex(y_true, y_pred):
 
 # # Define Custom Loss
 
-# In[7]:
-
 
 def custom_loss(sigma):
     def gaussian_loss(y_true, y_pred):
@@ -164,8 +149,6 @@ def custom_loss(sigma):
 
 
 # # Define Gaussian Regressor Layer
-
-# In[8]:
 
 
 class GaussianLayer(Layer):
@@ -201,8 +184,6 @@ class GaussianLayer(Layer):
 
 # # Define Model
 
-# In[9]:
-
 
 p = {'lr': 0.001,
      'nfilters': int(32),
@@ -220,8 +201,6 @@ p = {'lr': 0.001,
      'dropout': 0.25,
      'l2reg': 0.01}
 
-
-# In[10]:
 
 
 def gcnn(params, lr_value, windows_seq, conv_width, fp_length, size_protein):
@@ -306,8 +285,6 @@ def gcnn(params, lr_value, windows_seq, conv_width, fp_length, size_protein):
     return interactionModel
 
 
-# In[11]:
-
 
 lr = [0.003,0.001,0.0007]
 filters_prot = [16,32,64]
@@ -322,8 +299,6 @@ cold_preds_sigmas = []
 n = 0
 
 
-# In[12]:
-
 
 for i in range(len(lr)):
     for j in range(len(filters_prot)):
@@ -336,9 +311,7 @@ for i in range(len(lr)):
                     
                     h5 = History()
                     rlr = ReduceLROnPlateau(monitor='loss', factor=0.5,patience=2, min_lr=0.00001, verbose=1, min_delta=1e-5)
-                    
-                    experiment = Experiment(api_key="qDboxfOH3TkFojZvhMRSWH2QR", project_name= "Ensemble_Gaussian", workspace="panagiotisterzopoulos")
-                    
+                                        
                     # fit and validate on random
                     gc.fit([X_atoms_train,X_bonds_train,X_edges_train,seqs_train],Y_train,
                           batch_size = 128, epochs = 30, shuffle = True, callbacks = [h5,rlr],
