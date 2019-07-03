@@ -20,6 +20,13 @@ Naturally, when trying to develop a model that apart from the point predictions 
 
 Some results on the pearson correlation between the absolute error and the uncertainties for the three ways mentioned above are shown in the pictures.
 
+![latent_position](https://user-images.githubusercontent.com/34557164/60582237-133b8f80-9d91-11e9-8c93-129d6d96dc39.png)
+"Latent space Norm" Way
+![dropout](https://user-images.githubusercontent.com/34557164/60582234-133b8f80-9d91-11e9-8b3c-c4a3a20b8a51.png)
+"Test-time Dropout" Way
+![ensemble](https://user-images.githubusercontent.com/34557164/60582236-133b8f80-9d91-11e9-82f1-165b9cc60112.png)
+"Deep Ensembles" Way
+
 
 ## References
 
