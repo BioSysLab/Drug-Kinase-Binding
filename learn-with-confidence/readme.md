@@ -15,6 +15,12 @@ Test-time dropout which is also known as Bayesian deep learning has been proved 
 ## Ensemble Learning
 To predict confidence intervals out of ensemble learning, one can take the standard deviation of the different models predictions as a metric of uncertainty. we implemented the uncertainty estimation using an ensemble of deep models trained on the same data set (108 slightly different graph convolutional neural networks as for their architecture configuration) that predict two values instead of one. To be more specific, we tried to recreate [a state of the art model] [2] that was published by Google’s DeepMind in 2017 and constitutes the best approach for estimating uncertainties in deep learning according to the author’s opinion. We use a network that outputs two values in the final layer, corresponding to the predicted mean μ(x) and variance σ(x) > 0. 
 
+## Validate Uncertainties
+Naturally, when trying to develop a model that apart from the point predictions also outputs uncertainty estimations, one must have a validation metric to judge these uncertainty predictions after the training. We decided that the validation of the uncertainty estimates can be calculated using the absolute error of the point predictions (i.e. the mean of all the predictions for an input), expecting the data points with the larger error to also have the maximum uncertainty. That way, the validation accuracy is defined as the correlation between the predicted uncertainties and the error of the correspondent inputs.
+
+Some results on the pearson correlation between the absolute error and the uncertainties for the three ways mentioned above are shown in the pictures.
+
+
 ## References
 
 [1] Yarin Gal and Zoubin Ghahramani. Dropout as a bayesian approximation: Representing model
